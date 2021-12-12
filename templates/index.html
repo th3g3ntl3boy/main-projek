@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Kelompok-4 ITB06</title>
+
+    <!-- WEB FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100,300,100italic,400,300italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+		
+	<!-- BOOTSTRAP -->
+	<link href="{{url_for('static', filename = 'css/bootstrap.min.css')}}" rel="stylesheet">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" href="{{url_for('static', filename = 'css/font-awesome.min.css')}}">
+	<!-- CUSTOM STYLING -->
+	<link href="{{url_for('static', filename = 'css/styles.css')}}" rel="stylesheet">
+	<!-- PRELOADER -->	
+	<link href="{{url_for('static', filename = 'css/loader.css')}}" rel="stylesheet">
+
+
+</head>
+<body>
+    <section id="header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-8">
+                    <h1 class="white-text">Selamat Datang di Projek Kami,</h1>
+                    <h1 class="white-text">Segmentasi wilayah</h1>
+                    <h5 class="white-text">berdasarakan karakteristik sektor peternakan di wilayah Yogyakarta dengan metode K-Means.</h5>
+                    <div id="countdown" class="white-text"></div>
+                </div>
+            </div>
+        </div>
+        <div class="animation">
+        <a class="arrow-down-animation" data-scroll href="#about"><i class="fa fa-angle-down"></i></a>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="container">
+            <div class="row text-center">
+                <h1>Pengelompokan wilayah tersebut terbagi atas 2 Klaster dengan karakteristik sebagai berikut</h1>
+                <div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+                    <h2> Klaster 1 :</h2>
+                    <img width ="320" height="250" src="{{url_for('static', filename = 'images/1.png')}}" />
+                </div>
+                <!-- Section 2 -->
+                <div data-sr="enter bottom over 1s, wait 0.3s, move 24px, reset" class="col-md-4 middle">
+                    <h1>PERBANDINGAN</h1>
+                </div>
+                <!-- Section 3 -->
+                <div data-sr="enter top over 1s, wait 0.3s, move 24px, reset" class="col-md-4">
+                    <h2> Klaster 2 :</h2>
+                    <img width ="320" height="250" src="{{url_for('static', filename = 'images/2.png')}}" />
+                </div>
+            </div>
+        </div>		 
+    </section>
+
+
+
+    <section id="about">
+        <div class="container">
+            <div class="row text-center">
+                <h2>Prediksi wilayahmu sekarang</h2>
+                <form method="post" action="/">
+                    <p>Banyak Ternak Sapi Potong</p>
+                    <p><input type="number" name="x1"></p>
+                    <p>Banyak Ternak Kambing</p>
+                    <p><input type="number" name="x2"></p>
+                    <p>Banyak Ternak Domba</p>
+                    <p><input type="number" name="x3"></p>
+                    <p>Populasi Burung Puyuh</p>
+                    <p><input type="number" name="x4"></p>
+                    <p>Populasi Ayam Bukan Ras</p>
+                    <p><input type="number" name="x5"></p>
+                    <p>Populasi Itik</p>
+                    <p><input type="number" name="x6"></p>
+                    <p>Jumlah Produksi Telur</p>
+                    <p><input type="number" name="x7"></p>
+                    <p>Produksi Daging Ayam Bukan Ras</p>
+                    <p><input type="number" name="x8"></p>
+                    <p>Produksi Kulit Sapi</p>
+                    <p><input type="number" name="x9"></p>
+                    <p>Produksi Kulit Kambing</p>
+                    <p><input type="number" name="x10"></p>
+                    <p>Produksi Kulit Domba</p>
+                    <p><input type="number" name="x11"></p>
+                    <input type="submit" value="Prediksi">
+                </form>
+                <p class="red-text"> *note : hasil prediksi terdapat pada bagian akhir halaman</p>
+            </div>
+        </div>			
+    </section>
+    
+    {%if myklaster %}
+    <section id="about">
+        <div class="container">
+            <div class="row text-center">
+                <p>Wilayah kamu termasuk ke dalam klaster-{{ myklaster }}</p> 
+            </div>
+        </div>			
+    </section>
+        
+    {%endif%}
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="{{url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
+		<!-- SMOOTH SCROLL -->
+		<script src="{{url_for('static', filename = 'js/smooth-scroll.min.js')}}"></script>
+		<!-- PARALLAX IMG -->
+		<script src="{{url_for('static', filename = 'js/jquery.parallax-1.1.3.js')}}"></script>
+		<!-- SCROLL REVEAL -->
+		<script src="{{url_for('static', filename = 'js/scrollReveal.min.js')}}"></script>
+		<!-- FUNCTIONS -->
+		<script src="{{url_for('static', filename = 'js/functions.js')}}"></script>
+</body>
+</html>
