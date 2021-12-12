@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projek Kelompok-4 ITB06</title>
+</head>
+<body>
+    <h1>Pengelompokan Kecamatan Berdasarkan Sektor Peternakan di Kota Yogyakarta</h1>
+    <p> Klaster 1 :</p>
+    <p> Klaster 2 :</p>
+    <form method="post" action="/">
+        <p>Banyak Ternak Sapi Potong</p>
+        <p><input type="number" name="x1"></p>
+        <p>Banyak Ternak Kambing</p>
+        <p><input type="number" name="x2"></p>
+        <p>Banyak Banyak Ternak Domba</p>
+        <p><input type="number" name="x3"></p>
+        <p>Populasi Burung Puyuh</p>
+        <p><input type="number" name="x4"></p>
+        <p>Populasi Ayam Bukan Ras</p>
+        <p><input type="number" name="x5"></p>
+        <p>Populasi Itik</p>
+        <p><input type="number" name="x6"></p>
+        <p>Jumlah Produksi Telur</p>
+        <p><input type="number" name="x7"></p>
+        <p>Produksi Daging Ayam Bukan Ras</p>
+        <p><input type="number" name="x8"></p>
+        <p>Produksi Kulit Sapi</p>
+        <p><input type="number" name="x9"></p>
+        <p>Produksi Kulit Kambing</p>
+        <p><input type="number" name="x10"></p>
+        <p>Produksi Kulit Domba</p>
+        <p><input type="number" name="x11"></p>
+        <input type="submit" value="Prediksi">
+    </form>
+    {%if myklaster %}
+        <p>Wilayah kamu termasuk ke dalam klaster-{{ myklaster }}</p> 
+    {%endif%}
+</body>
+</html>
